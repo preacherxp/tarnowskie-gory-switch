@@ -4,7 +4,7 @@ Contemporary Tarnowskie Góry in a pixel-art day/night switch: the Rynek with it
 
 [Live demo](https://preacherxp.github.io/tarnowskie-gory-switch/) · [Download 60 fps MP4](tarnowskie-gory-day-night-60fps.mp4)
 
-The seven-second, 800 × 500 H.264 recording includes the entire animated switch, frame and moving glass lens.
+The seven-second, 1600 × 1000 H.264 recording includes the entire animated switch, frame and moving glass lens.
 
 The scene is a compressed panorama, not one street view. The south frontage of the Rynek is drawn in its real order, from the town hall at number 4 to Dom Sedlaczka at number 1. The church tower from the north side of the square, the belfry from pl. Gwarków and the narrow-gauge line are brought into the same summer picture. People cross the setts on foot and by bicycle, a guided group follows a yellow pennant, a waiter works the café garden, pigeons scatter before the train, and both clocks show the hour. A quick flick of the lens rings the belfry's bell.
 
