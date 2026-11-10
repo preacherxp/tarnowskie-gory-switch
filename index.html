@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarnowskie Góry switch</title>
+<meta name="description" content="Contemporary Tarnowskie Góry in pixel art. The Rynek with the town hall, the Evangelical church tower, the miners' belfry, Dom Sedlaczka and the narrow-gauge train. Drag through day, night and dawn.">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { font: 15px/1.5 ui-sans-serif, -apple-system, "Segoe UI", sans-serif; background: #08080f; overflow-x: hidden; }
+
+  /* Each city turns its own wall. --dark follows the hours as that lens moves. */
+  section {
+    --dark: 0;
+    --mix: calc(var(--dark) * 100%);
+    --dusk: calc(var(--dark) * (1 - var(--dark)) * 4);
+    --tint: color-mix(in oklab, var(--dusk-colour) calc(var(--dusk) * 62%), transparent);
+    background: color-mix(in oklab, var(--night) var(--mix), var(--paper));
+    background-image: linear-gradient(var(--tint), var(--tint));
+    color: color-mix(in oklab, #efeaf6 var(--mix), #2a2620);
+    min-height: 100svh;
+    padding: 72px 24px;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 56px;
+    overflow: hidden;
+  }
+  .tarnowskie-gory { --paper: #e9e5d8; --night: #121d2b; --dusk-colour: #94707e; }
+
+  .switch { width: min(680px, calc(100vw - 96px)); display: block; }
+  footer {
+    background: #08080f; color: #8b86a3; text-align: center; padding: 40px 24px 56px; font-size: 14px;
+  }
+  footer a { color: inherit; text-underline-offset: 3px; }
+  kbd { font: 500 12px ui-monospace, "SF Mono", Menlo, monospace; padding: 2px 6px; border: 1px solid #26243a; border-radius: 4px; }
+</style>
+</head>
+<body>
+<section class="tarnowskie-gory" aria-label="Contemporary Tarnowskie Góry: the Rynek with the town hall, the Evangelical church tower, the miners' belfry, Dom Sedlaczka and the narrow-gauge train.">
+  <tarnowskie-gory-switch class="switch"></tarnowskie-gory-switch>
+  <city-readout city="Tarnowskie Góry"></city-readout>
+</section>
+<footer><p>Ratusz · Kościół Zbawiciela · Dzwonnica Gwarków · Dom Sedlaczka · Górnośląskie Koleje Wąskotorowe</p>Drag to move through the hours. Tap to switch. <kbd>←</kbd> <kbd>→</kbd> step, <kbd>Space</kbd> toggles. <a href="tarnowskie-gory-day-night-60fps.mp4" download>Download 60 fps MP4</a></footer>
+<script src="city-switch.js"></script>
+<script src="tarnowskie-gory.js"></script>
+<script>
+  for (const section of document.querySelectorAll('section')) {
+    const toggle = section.querySelector('.switch');
+    const key = `city-switch:${section.className}`;
+    toggle.addEventListener('scrub', (e) => {
+      const { dark } = e.detail;
+      section.style.setProperty('--dark', dark.toFixed(3));
+    });
+    toggle.addEventListener('change', (e) => localStorage.setItem(key, e.detail.night ? 'night' : 'day'));
+    const saved = localStorage.getItem(key);
+    if (saved ? saved === 'night' : matchMedia('(prefers-color-scheme: dark)').matches) toggle.jump?.(true);
+  }
+</script>
+</body>
+</html>
