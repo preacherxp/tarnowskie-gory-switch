@@ -2,7 +2,7 @@
 
 Contemporary Tarnowskie Góry in a pixel-art day/night switch: the Rynek with its renovated neo-Renaissance town hall, the tower of the Evangelical Church of the Saviour, the miners' belfry, Dom Sedlaczka, and a Górnośląskie Koleje Wąskotorowe narrow-gauge train passing along the near edge.
 
-[Live demo](https://preacherxp.github.io/tarnowskie-gory-switch/) · [Download 60 fps MP4](tarnowskie-gory-day-night-60fps.mp4)
+[Live demo](https://preacherxp.github.io/tarnowskie-gory-switch/) · [Download 60 fps MP4](tarnowskie-gory-day-night-60fps.mp4) · [Download Instagram 4:5 MP4](tarnowskie-gory-instagram-4x5-60fps.mp4) · [Download Instagram cover](tarnowskie-gory-instagram-cover.jpg)
 
 The seven-second, 1600 × 1000 H.264 recording includes the entire animated switch, frame and moving glass lens.
 
